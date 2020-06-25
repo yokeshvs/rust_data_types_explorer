@@ -3,6 +3,9 @@
 #![allow(unused_mut)]
 #![allow(unused_variables)]
 
+mod loops;
+mod sh;
+mod control_flow;
 use std::mem;
 
 fn main() {
@@ -52,6 +55,16 @@ fn main() {
     operators();
 
     scopes();
+
+    sh::stack_and_heap();
+
+    control_flow::if_statement(50);
+
+    control_flow::if_statement(10);
+
+    control_flow::if_statement(25);
+
+    loops::loops(10);
 }
 
 fn operators() {
