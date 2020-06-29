@@ -1,12 +1,15 @@
 #![allow(dead_code)]
 #![allow(unused_imports)]
 #![allow(unused_mut)]
+#![allow(unused_must_use)]
 #![allow(unused_variables)]
 
+mod match_;
 mod loops;
 mod sh;
 mod control_flow;
 use std::mem;
+mod lock;
 
 fn main() {
     let a:i8 = 100;
@@ -65,6 +68,13 @@ fn main() {
     control_flow::if_statement(25);
 
     loops::loops(10);
+
+    println!("matching {} = {}", 100, match_::get(100));
+    println!("matching {} = {}", 3, match_::get(3));
+    println!("matching {} = {}", 15, match_::get(15));
+    println!("matching {} = {}", 90, match_::get(90));
+
+    lock::unlock();
 }
 
 fn operators() {
